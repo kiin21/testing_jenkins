@@ -1,6 +1,10 @@
 pipeline {
     agent any
     
+    triggers {
+        cron('H/1 * * * *')
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -27,6 +31,12 @@ pipeline {
                 echo "doing delivery stuff.."
                 '''
             }
-        }   
+        }
+
+        stage('Example') {
+            steps {
+                echo "Job này đang chạy mỗi phút." >> task.txt
+            }
+        }
     }
 }
