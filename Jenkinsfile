@@ -32,11 +32,5 @@ pipeline {
                 '''
             }
         }
-
-        stage('Example') {
-            steps {
-                echo "Job này đang chạy mỗi phút." >> task.txt
-            }
-        }
     }
 }
